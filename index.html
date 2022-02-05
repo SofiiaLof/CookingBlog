@@ -6,40 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Diary</title>
 
 </head>
 <body>
-    <main>
-        <section id="post-creation">
-            <div>
-                <label for="post-title">Title:</label>
-              <input type="text" id="post-title" />
-          </div>
-          
-          <div>
-              <label for="post-image">Image:</label>
-              <input type="text" id="post-image" />
-          </div>
-         
-          <div>
-              <label for="post-content">Content:</label>
-          <textarea id="post-content"></textarea>
-          </div>
-          
-          <div>
-              <button id="publish-post-btn">Publish</button>
-          </div>
-        
-        </section>
-  
-        <section id="posts-list"></section>
-  
-  </main>
-  <aside>
-      <section id="aside-post-list"></section>
-    </aside>
-  
+<div class="container-fluid">
+    <div class="row">
+        <aside class="col-4">
+            <section id="aside-post-list"></section>
+          </aside>
+        <main class="col-8">
+            <section id="post-creation" class="d-flex flex-column container-fluid">
+                <div class="row align-items-center">
+                    <div class="p-3 col-2">
+                        <label for="post-title" class="col-form-label">Title:</label>
+                  </div>
+                  <div class="col-9">
+                    <input type="text" id="post-title" class="form-control">
+                  </div>
+                  
+                  <div class="p-3 col-2">
+                      <label for="post-image" class="col-form-label">Image:</label>
+                  </div>
+                  <div class="col-9">
+                    <input type="text" id="post-image" class="form-control">
+                  </div>
+                 
+                  <div class="p-3 col-2">
+                      <label for="post-content"  class="col-form-label">Content:</label>
+                  </div>
+                  <div class="col-9"> 
+                    <textarea id="post-content" class="form-control"></textarea>
+                  </div>
+                  
+                  <div class="p-3 d-flex justify-content-end">
+                      <button id="publish-post-btn" class="btn btn-success">Publish</button>
+                  </div>
+                </div>
+                
+            
+            </section>
+      
+            <section id="posts-list"></section>
+      </main>
+      
+    </div>
+</div>
+   
     <script type="module" src="script.js"></script>
 </body>
 </html>

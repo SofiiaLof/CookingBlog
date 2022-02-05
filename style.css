@@ -1,0 +1,12 @@
+#post-creation{
+    border-radius: 1rem;
+    width: 70%;
+    box-shadow: 0 0 8px 0 rgb(0 0 0 / 8%), 0 0 15px 0 rgb(0 0 0 / 2%),
+    0 0 20px 4px rgb(0 0 0 / 6%);
+    background-color: #E9DAC1;
+
+}
+
+body{
+    font-family: "Roboto";
+}
