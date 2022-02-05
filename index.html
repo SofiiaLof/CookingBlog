@@ -4,11 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <title>Diary</title>
 
 </head>
 <body>
+    <main>
+        <section id="post-creation">
+            <div>
+                <label for="post-title">Title:</label>
+              <input type="text" id="post-title" />
+          </div>
+          
+          <div>
+              <label for="post-image">Image:</label>
+              <input type="text" id="post-image" />
+          </div>
+         
+          <div>
+              <label for="post-content">Content:</label>
+          <textarea id="post-content"></textarea>
+          </div>
+          
+          <div>
+              <button id="publish-post-btn">Publish</button>
+          </div>
+        
+        </section>
+  
+        <section id="posts-list"></section>
+  
+  </main>
+  <aside>
+      <section id="aside-post-list"></section>
+    </aside>
+  
     <script type="module" src="script.js"></script>
 </body>
 </html>
