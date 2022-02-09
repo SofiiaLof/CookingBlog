@@ -1,4 +1,5 @@
 export class Post{
+
     constructor(){
         this.posts = [
             {
@@ -22,4 +23,23 @@ export class Post{
         ];
     }
  
+    addNewPost(title, content, image){
+        let date = new Date();
+        let day = date.getDate();
+        let month = date.getMonth()+1;
+        let year = date.getFullYear();
+        let fullDate = `${year}/${month}/${day}`;
+
+        console.log(fullDate);
+        const newPost = {
+            title: title,
+            image: image,
+            content: content,
+            date: fullDate
+        };
+
+         this.posts.push(newPost);
+    }
+
+  
 }
