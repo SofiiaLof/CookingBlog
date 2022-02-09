@@ -71,3 +71,16 @@ printPosts();
 };
     reader.readAsDataURL(inputImage.files[0]);
  });
+
+ const postButton = document.getElementById('publish-post-btn');
+
+ postButton.addEventListener('click', function(){
+   const title = document.getElementById('post-title').value;
+   const content = document.getElementById('post-content').value;
+   const image = imageSource;
+
+   post.addNewPost(title, content, image);
+   console.log(post.posts);
+   printPosts();
+
+ });
