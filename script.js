@@ -10,7 +10,6 @@ function printPosts(){
     const row = document.createElement("div");
     row.className = "row justify-content-center";
     sectionPosts.append(row);
-    
 
     for(let i = 0; i < post.posts.length; i++){
         const item = post.posts[i];
@@ -34,6 +33,7 @@ function printPosts(){
        deleteBtn.className = "deleteBtn";
        const deleteIcon = document.createElement("i");
        deleteIcon.className = "bi bi-x-square";
+       deleteIcon.id = item;
       
        title.textContent = item.title;
        image.src = item.image;
@@ -72,6 +72,8 @@ printPosts();
     reader.readAsDataURL(inputImage.files[0]);
  });
 
+
+ 
  const postButton = document.getElementById('publish-post-btn');
 
  postButton.addEventListener('click', function(){
@@ -80,7 +82,26 @@ printPosts();
    const image = imageSource;
 
    post.addNewPost(title, content, image);
-   console.log(post.posts);
    printPosts();
 
  });
+
+
+
+ const postItems = document.querySelectorAll('.post-items');
+
+ for(let item of postItems){
+
+     item.addEventListener('click', function (event){
+      
+         let target = event.target;
+       
+            if(target.className == 'bi bi-x-square'){
+                post.deletePost(target.id);
+                item.remove();
+              
+            }
+              
+         
+    });
+ }
