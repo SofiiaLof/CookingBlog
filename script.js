@@ -54,3 +54,20 @@ function printPosts(){
 }
 
 printPosts();
+  
+ const inputImage = document.getElementById('post-image');
+ let imageSource;
+
+ inputImage.addEventListener('change', function(event){
+
+    const reader = new FileReader();
+
+    reader.onload = function(){
+        
+    const img = new Image();
+    imageSource = img.src;
+    imageSource = reader.result;
+
+};
+    reader.readAsDataURL(inputImage.files[0]);
+ });
