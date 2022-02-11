@@ -1,28 +1,8 @@
 export class Post {
+  
   constructor() {
-    this.posts = [
-      {
-        title: "Post 1",
-        image: "../assets/christmas.png",
-        content:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        date: "2022/02/12",
-      },
-      {
-        title: "Post 2",
-        image: "../assets/christmas.png",
-        content:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        date: "2022/02/12",
-      },
-      {
-        title: "Post 3",
-        image: "../assets/christmas.png",
-        content:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        date: "2022/02/12",
-      },
-    ];
+    
+   this.posts =[];
   }
 
   addNewPost(title, content, image) {
@@ -31,7 +11,8 @@ export class Post {
     let month = date.getMonth() + 1;
     let year = date.getFullYear();
     let fullDate = `${year}/${month}/${day}`;
-
+  
+    
     const newPost = {
       title: title,
       image: image,
@@ -39,11 +20,27 @@ export class Post {
       date: fullDate,
     };
 
+  
     this.posts.push(newPost);
-    console.log(this.posts);
+    this.savePostsToStorage();
+    
   }
 
   deletePost(chosenPost) {
-    this.posts.splice(chosenPost, 1);
+    
+    let storageArray = this.openPostsFromStorage();
+    storageArray.splice(chosenPost,1);
+    this.posts = storageArray;
+  
+    this.savePostsToStorage();
+  }
+
+  savePostsToStorage() {
+    window.localStorage.setItem("posts", JSON.stringify(this.posts));
+  }
+
+  openPostsFromStorage() {
+    const storage = JSON.parse(window.localStorage.getItem("posts"));
+    return storage;
   }
 }
