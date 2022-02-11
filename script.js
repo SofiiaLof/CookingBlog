@@ -1,22 +1,23 @@
+
 import { Post } from "./post.js";
 
 const post = new Post();
 
 const storage = post.openPostsFromStorage();
+if(storage !=null){
+    printPosts();
+    printAside();
 
-if (storage !== null) {
-
-  printPosts();
-  
 }
 
+
 function printPosts() {
+
   const sectionPosts = document.getElementById("posts-list");
   sectionPosts.innerHTML = " ";
 
   const row = document.createElement("div");
   row.className = "row justify-content-center";
-
   const storage = post.openPostsFromStorage();
 
   for (let i = 0; i < storage.length; i++) {
@@ -24,7 +25,7 @@ function printPosts() {
 
     const card = document.createElement("div");
     card.className = "post-items p-3 m-3 col-8";
-
+   
     const cardBody = document.createElement("div");
     cardBody.className = "post-item card-body";
 
@@ -58,14 +59,46 @@ function printPosts() {
     deleteBtn.append(deleteIcon);
     row.append(card);
     sectionPosts.append(row);
+    
   }
  
 }
+
+function printAside() {
+
+  const asideList = document.getElementById("aside-post-list");
+  const rowDate = document.createElement("div");
+  rowDate.className = "row justify-content-center";
+  asideList.innerHTML = " ";
+  const storage = post.openPostsFromStorage();
+
+  for (let i = 0; i < storage.length; i++) {
+   
+    const dateContainer = document.createElement("div");
+    dateContainer.className = "date-container";
+   
+    const dateItem = document.createElement("li");
+    dateItem.className = "date-item";
+    
+    const aItem = document.createElement("a");
+    aItem.textContent = storage[i].date;
+    aItem.href = "#" + i;
+    
+    dateItem.append(aItem);
+    dateContainer.append(dateItem);
+    rowDate.append(dateContainer);
+    asideList.append(rowDate);
+
+  }
+}
+
+
 
 const inputImage = document.getElementById("post-image");
 let imageSource;
 
 inputImage.addEventListener("change", function (event) {
+   
   const reader = new FileReader();
 
   reader.onload = function () {
@@ -73,18 +106,23 @@ inputImage.addEventListener("change", function (event) {
     imageSource = img.src;
     imageSource = reader.result;
   };
-  reader.readAsDataURL(inputImage.files[0]);
+  reader.readAsArrayBuffer(inputImage.files[0]);
 });
 
 const postButton = document.getElementById("publish-post-btn");
 
 postButton.addEventListener("click", function () {
+
   const title = document.getElementById("post-title").value;
   const content = document.getElementById("post-content").value;
   const image = imageSource;
 
+
   post.addNewPost(title, content, image);
+
   printPosts();
+  printAside();
+ 
 });
 
 document
@@ -99,7 +137,10 @@ document
     let postItem = target.closest(".post-items");
     post.deletePost(index);
     postItem.remove();
+
     printPosts();
-    console.log(index);
+    printAside();
+
   });
- 
+
+

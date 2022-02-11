@@ -3,7 +3,7 @@
     max-width: 70%;
     box-shadow: 0 0 8px 0 rgb(0 0 0 / 8%), 0 0 15px 0 rgb(0 0 0 / 2%),
     0 0 20px 4px rgb(0 0 0 / 6%);
-    background-color: #E9DAC1;
+    background-color: #E4EFE7;
 
 }
 
@@ -15,7 +15,7 @@ body{
     list-style-type: none;
     border-radius: 1rem; 
     box-shadow: 0 0 8px 0 rgb(0 0 0 / 8%), 0 0 15px 0 rgb(0 0 0 / 2%);
-    background-color: #FBF8F1;
+    background-color: #FDFAF6;
 }
 
 .deleteBtn{
@@ -27,4 +27,27 @@ body{
     font-size: 2rem;
     color:#a51414;
 
+}
+
+a, .date-item{
+    text-decoration: none;
+    color: black;
+    list-style:none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    
+}
+
+body{
+    /*height: 100vh;*/
+  background-image: url("./assets/cooking.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  
+}
+
+.heading{
+    text-transform: uppercase;
+    font-family: 'Satisfy';
 }

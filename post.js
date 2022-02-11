@@ -1,8 +1,17 @@
 export class Post {
   
   constructor() {
-    
-   this.posts =[];
+
+    if(this.openPostsFromStorage() === null){
+
+      this.posts = [];
+
+    }else{
+
+      this.posts = this.openPostsFromStorage();
+      
+    }
+
   }
 
   addNewPost(title, content, image) {
@@ -31,7 +40,6 @@ export class Post {
     let storageArray = this.openPostsFromStorage();
     storageArray.splice(chosenPost,1);
     this.posts = storageArray;
-  
     this.savePostsToStorage();
   }
 
