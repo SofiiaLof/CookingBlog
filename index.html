@@ -1,64 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <title>Cooking blog</title>
+  </head>
+  <body>
+    <div class="main container-fluid">
+      <div class="heading p-4">
+        <h1 class="h1 text-center">Welcome to cooking blog</h1>
+      </div>
 
-</head>
-<body>
-<div class="main container-fluid">
-  <div class="heading p-4">
-    <h1 class="h1 text-center">Welcome to cooking blog</h1>
-  </div>
- 
-    <div class="row justify-content-center">
+      <div class="row justify-content-center">
         <aside class="col-sm-4 text-center">
-            <section id="aside-post-list" class="container"></section>
-          </aside>
+          <section id="aside-post-list" class="container"></section>
+        </aside>
         <main class="col">
-            <section id="post-creation" class="d-flex flex-column container-fluid">
-                <div class="row align-items-center justify-content-between">
-                    <div class="p-3 col-2">
-                        <label for="post-title" class="col-form-label">Title:</label>
-                  </div>
-                  <div class="col-9">
-                    <input type="text" id="post-title" class="form-control">
-                  </div>
-                  
-                  <div class="p-3 col-2">
-                      <label for="post-image" class="col-form-label">Image:</label>
-                  </div>
-                  <div class="col-9">
-                    <input type="text" id="post-image" class="form-control">
-                  </div>
-                 
-                  <div class="p-3 col-2">
-                      <label for="post-content"  class="col-form-label">Content:</label>
-                  </div>
-                  <div class="col-9"> 
-                    <textarea id="post-content" class="form-control"></textarea>
-                  </div>
-                  
-                  <div class="p-3 d-flex justify-content-end">
-                      <button id="publish-post-btn" class="btn btn-success">Publish</button>
-                  </div>
-                </div>
-                
-            
-            </section>
-      
-            <section id="posts-list" class="container-fluid"></section>
-      </main>
-      
+          <section
+            id="post-creation"
+            class="d-flex flex-column container-fluid"
+          >
+            <div class="row align-items-center justify-content-between">
+              <div class="p-3 col-2">
+                <label for="post-title" class="col-form-label">Title:</label>
+              </div>
+              <div class="col-9">
+                <input type="text" id="post-title" class="form-control" />
+              </div>
+
+              <div class="p-3 col-2">
+                <label for="post-image" class="col-form-label">Image:</label>
+              </div>
+              <div class="col-9">
+                <input type="text" id="post-image" class="form-control" />
+              </div>
+
+              <div class="p-3 col-2">
+                <label for="post-content" class="col-form-label"
+                  >Content:</label
+                >
+              </div>
+              <div class="col-9">
+                <textarea id="post-content" class="form-control"></textarea>
+              </div>
+
+              <div class="p-3 d-flex justify-content-end">
+                <button id="publish-post-btn" class="btn btn-success">
+                  Publish
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section id="posts-list" class="container-fluid"></section>
+        </main>
+      </div>
     </div>
-</div>
-   
+
     <script type="module" src="script.js"></script>
-</body>
+  </body>
 </html>

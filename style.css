@@ -1,59 +1,56 @@
-#post-creation{
-    border-radius: 1rem;
-    max-width: 70%;
-    box-shadow: 0 0 8px 0 rgb(0 0 0 / 8%), 0 0 15px 0 rgb(0 0 0 / 2%),
+#post-creation {
+  border-radius: 1rem;
+  max-width: 70%;
+  box-shadow: 0 0 8px 0 rgb(0 0 0 / 8%), 0 0 15px 0 rgb(0 0 0 / 2%),
     0 0 20px 4px rgb(0 0 0 / 6%);
-    background-color: #E4EFE7;
-
+  background-color: #e4efe7;
 }
 
-body{
-    font-family: "Roboto";
-    font-weight: bold;
+body {
+  font-family: "Roboto";
+  font-weight: bold;
 }
 
-.post-items{
-    list-style-type: none;
-    border-radius: 1rem; 
-    box-shadow: 0 0 8px 0 rgb(0 0 0 / 8%), 0 0 15px 0 rgb(0 0 0 / 2%);
-    background-color: #FDFAF6;
+.post-items {
+  list-style-type: none;
+  border-radius: 1rem;
+  box-shadow: 0 0 8px 0 rgb(0 0 0 / 8%), 0 0 15px 0 rgb(0 0 0 / 2%);
+  background-color: #fdfaf6;
 }
 
-.deleteBtn{
-    background: none;
-    border: none;
+.deleteBtn {
+  background: none;
+  border: none;
 }
 
-.bi-x-square{
-    font-size: 2rem;
-    color:#a51414;
-
+.bi-x-square {
+  font-size: 2rem;
+  color: #a51414;
 }
 
-a, .date-item{
-    text-decoration: none;
-    color: black;
-    list-style:none;
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: #B5CDA3;
+a,
+.date-item {
+  text-decoration: none;
+  color: black;
+  list-style: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #b5cda3;
 }
 
-body{
-    /*height: 100vh;*/
+body {
+  /*height: 100vh;*/
   background-image: url("./assets/cooking.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
- 
-  
 }
 
-.heading{
-    text-transform: uppercase;
-    font-family: 'Montserrat';
+.heading {
+  text-transform: uppercase;
+  font-family: "Montserrat";
 }
 
-p{
-    word-break: break-all;
+p {
+  word-break: break-all;
 }
