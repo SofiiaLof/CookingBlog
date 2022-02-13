@@ -25,9 +25,11 @@ function printPosts() {
 
     const card = document.createElement("div");
     card.className = "post-items p-3 m-3 col-8";
+    card.id = i+"post";
    
     const cardBody = document.createElement("div");
     cardBody.className = "post-item card-body";
+
 
     const title = document.createElement("h2");
     const image = document.createElement("img");
@@ -72,6 +74,8 @@ function printAside() {
   asideList.innerHTML = " ";
   const storage = post.openPostsFromStorage();
 
+  
+
   for (let i = 0; i < storage.length; i++) {
    
     const dateContainer = document.createElement("div");
@@ -82,7 +86,8 @@ function printAside() {
     
     const aItem = document.createElement("a");
     aItem.textContent = storage[i].date;
-    aItem.href = "#" + i;
+    aItem.href = "#" + i + "post";
+    aItem.setAttribute("post-ref", i + "post");
     
     dateItem.append(aItem);
     dateContainer.append(dateItem);
@@ -92,22 +97,37 @@ function printAside() {
   }
 }
 
+function changeColortoNone(){
+  const items = document.querySelectorAll('.post-items');
+  for(let item of items){
+
+  item.style.boxShadow = "0 0 8px 0 rgb(0 0 0 / 8%), 0 0 15px 0 rgb(0 0 0 / 2%)";
+  }
+}
 
 
-const inputImage = document.getElementById("post-image");
-let imageSource;
+const aside = document.getElementById('aside-post-list');
 
-inputImage.addEventListener("change", function (event) {
+aside.addEventListener('click', function(event){
+const target = event.target;
+const items = document.querySelectorAll('.post-items');
+
+
+for(let item of items){
+
+ 
+  console.log(target.getAttribute("post-ref"));
+
+  if(target.getAttribute("post-ref") === item.id){
    
-  const reader = new FileReader();
+  item.style.boxShadow = "rgb(255, 99, 99) 0px 1px 2px 0px,rgb(255, 99, 99) 0px 2px 6px 2px";
+    setTimeout(changeColortoNone, 2000);
 
-  reader.onload = function () {
-    const img = new Image();
-    imageSource = img.src;
-    imageSource = reader.result;
-  };
-  reader.readAsArrayBuffer(inputImage.files[0]);
+  }
+}
 });
+
+
 
 const postButton = document.getElementById("publish-post-btn");
 
@@ -115,7 +135,7 @@ postButton.addEventListener("click", function () {
 
   const title = document.getElementById("post-title").value;
   const content = document.getElementById("post-content").value;
-  const image = imageSource;
+  const image = document.getElementById("post-image").value;
 
 
   post.addNewPost(title, content, image);
@@ -143,4 +163,4 @@ document
 
   });
 
-
+ 
