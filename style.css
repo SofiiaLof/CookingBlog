@@ -9,6 +9,7 @@
 
 body{
     font-family: "Roboto";
+    font-weight: bold;
 }
 
 .post-items{
@@ -35,7 +36,7 @@ a, .date-item{
     list-style:none;
     font-weight: bold;
     font-size: 1.5rem;
-    
+    color: #B5CDA3;
 }
 
 body{
@@ -44,10 +45,15 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+ 
   
 }
 
 .heading{
     text-transform: uppercase;
-    font-family: 'Satisfy';
+    font-family: 'Montserrat';
+}
+
+p{
+    word-break: break-all;
 }

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto&display=swap" rel="stylesheet">
     <title>Cooking blog</title>
 
 </head>
@@ -17,13 +17,13 @@
     <h1 class="h1 text-center">Welcome to cooking blog</h1>
   </div>
  
-    <div class="row">
-        <aside class="col-4">
+    <div class="row justify-content-center">
+        <aside class="col-sm-4 text-center">
             <section id="aside-post-list" class="container"></section>
           </aside>
-        <main class="col-8">
+        <main class="col">
             <section id="post-creation" class="d-flex flex-column container-fluid">
-                <div class="row align-items-center">
+                <div class="row align-items-center justify-content-between">
                     <div class="p-3 col-2">
                         <label for="post-title" class="col-form-label">Title:</label>
                   </div>
@@ -35,7 +35,7 @@
                       <label for="post-image" class="col-form-label">Image:</label>
                   </div>
                   <div class="col-9">
-                    <input type="file" accept ="image/*" id="post-image" class="form-control">
+                    <input type="text" id="post-image" class="form-control">
                   </div>
                  
                   <div class="p-3 col-2">
