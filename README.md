@@ -1,2 +1,3 @@
-# Javascript Inlämningsuppgift
-Repo att forka för inlämning i JavaScript kursen
+# Simple cooking blog
+Skolarbeteprojekt som syftade på att utveckla en enkel interaktiv program med hjälp av JavaScript.
+
